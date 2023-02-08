@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "184925199163",
+    "project_id": "hack-it-79e99",
+    "storage_bucket": "hack-it-79e99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184925199163:android:ee20cb5a387847dced351e",
+        "android_client_info": {
+          "package_name": "com.example.hack_it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184925199163-vvf5h0droil0vron525bastgdintvk8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgHOCHpkFWCZaKI_xy_ehL2U_w4otYPGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184925199163-vvf5h0droil0vron525bastgdintvk8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
