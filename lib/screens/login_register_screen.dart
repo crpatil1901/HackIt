@@ -1,4 +1,6 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hack_it/screens/email_verification_screen.dart';
 import 'package:hack_it/screens/home_screen.dart';
@@ -173,6 +175,27 @@ class LoginRegisterPage extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => const EmailVerificationScreen(),)
                         );
                       } else {
+
+                        //check if user had created profile
+                        //if user created profile navigate user to home page
+                        //else send user to profile screen
+
+                        final FirebaseAuth auth = FirebaseAuth.instance;
+                        final User? user = auth.currentUser;
+                        final uid = user?.uid;
+
+                        var db = FirebaseFirestore.instance;
+
+                        // Create a new user with a first and last name
+                        final user_data = <String, dynamic>{
+                          "first": "Ada",
+                          "last": "Lovelace",
+                          "born": 1815
+                        };
+
+                        // Add a new document with a generated ID
+                        db.collection("users").doc(uid).set(user_data);
+
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (context) => const HomeScreen(),)
                         );
