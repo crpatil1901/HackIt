@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hack_it/screens/home_screen.dart';
 import 'package:hack_it/theme/color_scheme.dart';
 import 'package:hack_it/screens/login_register_screen.dart';
 import 'package:hack_it/view_models/login_vm.dart';
@@ -18,6 +20,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
               bodyMedium: TextStyle(fontFamily: "SpaceMono")
             )
           ),
-          home: LoginRegisterPage(),
+          home: FirebaseAuth.instance.currentUser == null ? LoginRegisterPage() : HomeScreen(),
         ),
       )
     );
